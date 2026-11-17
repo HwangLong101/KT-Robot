@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/AtsushiSakai/PythonRobotics",
+  "commit": "ef64608ceb0012f2a0b3d532fddc80243e807cfa",
+  "retrieved_date": "2026-11-17",
+  "sha256": {
+    "PathTracking/pure_pursuit/pure_pursuit.py": "d6702311927cb44cbe27546e6e76ba0b7371a6b0715013ac2a40735b299779eb",
+    "utils/angle.py": "62c3f0fdc76298d772d574b7a4357fded9265d1e0af048d87b5c8ca1a528017a",
+    "LICENSE": "ca6f10832a25c1cd07fa62872458ca336a6ea83ee2f2236216086bd7a5bbf264",
+    "README.md": "97d04bf1a938b849e43235e48a476968a2ce6d85ca10c47060ec91a2c539c9e8"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-17",
+  "matrix": {
+    "paths": [
+      "straight",
+      "s_curve",
+      "corners"
+    ],
+    "methods": [
+      "baseline",
+      "curvature"
+    ],
+    "lookahead_m": [
+      0.3,
+      0.4,
+      0.55,
+      0.8,
+      1.0
+    ],
+    "main_dt_s": 0.05,
+    "additional_dt_at_L055_s": [
+      0.025,
+      0.1
+    ],
+    "unique_trials": 42,
+    "lateral_limit_m_s2": 0.12
+  },
+  "environment": {
+    "python": "3.13.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "pillow": "13.0.0"
+  },
+  "sha256_code": {
+    "model.py": "79dbf95d885b55f57032dcf2818f7083cae25370ea0d9681ffc16f0ef68ee18c",
+    "tracking.py": "d2e488343da0377ebb95c0c5bddfe34fe0e414e912adb58bba0387912f57d4ff",
+    "scenarios.py": "2b918542a3c87003f0635befd431c02de398ac47e4cb4caf4a2c3296ca55dc82",
+    "run_robot.py": "d657f605b88876bced6e051de86ef0e6068d13f220819ee07fbe7cd14ec52493",
+    "run_evaluation.py": "e5ba97c0f77f183a60542e9a766143f6a9dfc80f6f2f222503c6cbc0100c4322"
+  },
+  "sources": [
+    "https://www.roboticsbook.org/S52_diffdrive_actions.html",
+    "https://publications.ri.cmu.edu/implementation-of-the-pure-pursuit-path-tracking-algorithm",
+    "https://arxiv.org/abs/2305.20026"
+  ],
+  "all_trials_reached_goal": true,
+  "notes": [
+    "Deterministic synthetic kinematics; no random seeds or statistical confidence intervals",
+    "v*omega is a kinematic lateral acceleration demand; no friction or motor dynamics model",
+    "The speed law is an educational extension, not a full implementation of Nav2 RPP"
+  ]
+}

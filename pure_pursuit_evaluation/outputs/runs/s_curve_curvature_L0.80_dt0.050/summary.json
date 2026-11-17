@@ -1,0 +1,53 @@
+{
+  "reached_goal": true,
+  "termination": "goal_tolerance",
+  "time_s": 25.05,
+  "sample_count": 502,
+  "final_goal_error_m": 0.04797364758498562,
+  "path_rmse_m": 0.19092350005528774,
+  "path_max_error_m": 0.6,
+  "distance_weighted_rmse_m": 0.15989318998723828,
+  "max_lateral_demand_m_s2": 0.12000000000000013,
+  "max_lateral_demand_after_1m_m_s2": 0.12000000000000013,
+  "max_abs_wheel_speed_rad_s": 10.717129576783252,
+  "max_abs_yaw_rate_rad_s": 0.5334017535456639,
+  "distance_travelled_m": 11.290863001085985,
+  "alignment_steps": 0,
+  "path_progress_fraction": 0.9956134698354698,
+  "settings": {
+    "dt": 0.05,
+    "speed": 0.5,
+    "lookahead": 0.8,
+    "goal_tolerance": 0.05,
+    "goal_gain": 1.0,
+    "align_threshold": 1.3089969389957472,
+    "heading_gain": 2.0,
+    "max_time": 120.0,
+    "speed_policy": "curvature",
+    "lateral_limit": 0.12
+  },
+  "robot": {
+    "radius": 0.05,
+    "track": 0.3,
+    "wheel_limit": 12.0,
+    "yaw_rate_limit": 2.0
+  },
+  "error_definition": "Minimum Euclidean distance from axle midpoint to reference polyline, including initial offset",
+  "assumptions": [
+    "Ideal no-slip motion",
+    "Perfect pose",
+    "Instantaneous wheel-speed response",
+    "No obstacles",
+    "No final-heading constraint"
+  ],
+  "scenario": "s_curve",
+  "method": "curvature",
+  "lookahead_m": 0.8,
+  "dt_s": 0.05,
+  "run_id": "s_curve_curvature_L0.80_dt0.050",
+  "initial_pose": [
+    0.0,
+    -0.6,
+    0.0
+  ]
+}

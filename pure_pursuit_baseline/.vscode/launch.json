@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Baseline: export results",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_baseline.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Original upstream: interactive animation",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/vendor/PythonRobotics/PathTracking/pure_pursuit/pure_pursuit.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Robot vi sai: mo phong chu S",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_robot.py",
+      "args": ["--animate"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Robot vi sai: ban giam toc khi cua",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_robot.py",
+      "args": ["--method", "curvature", "--scenario", "corners", "--animate"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Danh gia day du 42 cau hinh",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_evaluation.py",
+      "args": ["--gif"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

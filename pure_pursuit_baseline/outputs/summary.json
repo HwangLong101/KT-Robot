@@ -1,0 +1,40 @@
+{
+  "source_commit": "ef64608ceb0012f2a0b3d532fddc80243e807cfa",
+  "model": "Upstream kinematic bicycle model (steering vehicle)",
+  "run_mode": "Unmodified upstream main; show_animation=False; data captured at return",
+  "simulation_time_s": 40.400000000000304,
+  "samples_including_initial": 405,
+  "target_index_final": 99,
+  "last_path_index": 99,
+  "termination": "lookahead_target_reached_final_index",
+  "center_distance_to_goal_m": 2.8091646766423297,
+  "rear_distance_to_goal_m": 4.259149259991927,
+  "center_path_rmse_m": 0.849303346416764,
+  "center_path_max_error_m": 3.0014438205374767,
+  "rear_path_rmse_m": 1.0779225920526863,
+  "rear_path_max_error_m": 3.3800919965663514,
+  "error_definition": "Unsigned minimum Euclidean distance to reference polyline; all samples, including initial offset",
+  "parameters": {
+    "dt_s": 0.1,
+    "wheelbase_m": 2.9,
+    "lookahead_base_m": 2.0,
+    "lookahead_gain_s": 0.1,
+    "speed_gain_per_s": 1.0,
+    "target_speed_m_s": 2.7777777777777777,
+    "max_steer_rad": 0.7853981633974483,
+    "time_limit_s": 100.0
+  },
+  "environment": {
+    "python": "3.13.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.2.4",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.8",
+    "pillow": "12.1.0"
+  },
+  "limitations": [
+    "Not yet a differential drive robot",
+    "Original assertion is not proof of goal arrival",
+    "No physical vehicle or VS Code GUI was tested here"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Robot vi sai: mo phong chu S",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_robot.py",
+      "args": ["--animate"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Robot vi sai: kiem chung 3 duong",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_robot.py",
+      "args": ["--scenario", "all", "--gif"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

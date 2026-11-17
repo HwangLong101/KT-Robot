@@ -1,0 +1,50 @@
+{
+  "reached_goal": true,
+  "termination": "goal_tolerance",
+  "time_s": 28.700000000000003,
+  "sample_count": 575,
+  "final_goal_error_m": 0.048541700502631895,
+  "path_rmse_m": 0.12055942377470757,
+  "path_max_error_m": 0.6,
+  "max_abs_wheel_speed_rad_s": 12.0,
+  "max_abs_yaw_rate_rad_s": 1.2755739867164104,
+  "distance_travelled_m": 13.533613503477126,
+  "alignment_steps": 0,
+  "path_progress_fraction": 0.9965329063709918,
+  "settings": {
+    "dt": 0.05,
+    "speed": 0.5,
+    "lookahead": 0.55,
+    "goal_tolerance": 0.05,
+    "goal_gain": 1.0,
+    "align_threshold": 1.3089969389957472,
+    "heading_gain": 2.0,
+    "max_time": 120.0
+  },
+  "robot": {
+    "radius": 0.05,
+    "track": 0.3,
+    "wheel_limit": 12.0,
+    "yaw_rate_limit": 2.0
+  },
+  "error_definition": "Minimum Euclidean distance from axle midpoint to reference polyline, including initial offset",
+  "assumptions": [
+    "Ideal no-slip motion",
+    "Perfect pose",
+    "Instantaneous wheel-speed response",
+    "No obstacles",
+    "No final-heading constraint"
+  ],
+  "scenario": "corners",
+  "initial_pose": [
+    0.0,
+    -0.6,
+    0.0
+  ],
+  "environment": {
+    "python": "3.13.7",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "pillow": "13.0.0"
+  }
+}
