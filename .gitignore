@@ -1,0 +1,13 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+
+# MATLAB / Simulink generated caches
+simulink/slprj/
+*.slxc
+*.autosave
+
+# Microsoft Word temporary lock files
+~$*.docx

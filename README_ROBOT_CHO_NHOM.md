@@ -1,10 +1,10 @@
 # Hướng dẫn nắm đề tài robot hai bánh vi sai bằng Pure Pursuit
 
 **Thành viên:** NGUYỄN HOÀNG LONG và NGUYỄN NGỌC DUY.  
-**Công cụ:** Python, VS Code.  
+**Công cụ:** Python 3.13.7, VS Code, MATLAB/Simulink R2025b.  
 **Tên đề tài:** Nghiên cứu và mô phỏng điều khiển bám quỹ đạo cho robot di động hai bánh chủ động bằng Pure Pursuit.
 
-Tài liệu này giải thích đề tài và bộ mã đã bàn giao để các thành viên có thể hiểu, chạy lại và trình bày kết quả. Nên đặt tệp tại `E:\ROBOT\README_ROBOT_CHO_NHOM.md`, cạnh ba thư mục dự án. Trong VS Code, mở tệp rồi nhấn **Ctrl + Shift + V** để xem bản trình bày.
+Tài liệu này giải thích toàn bộ đề tài và bộ mã đã bàn giao (gồm 3 giai đoạn Python và bộ mô hình đối chiếu + đánh giá độ bền trên MATLAB/Simulink) để các thành viên có thể hiểu, chạy lại và trình bày kết quả. Trong VS Code, mở tệp `README_ROBOT_CHO_NHOM.md` tại thư mục gốc dự án rồi nhấn **Ctrl + Shift + V** để xem bản trình bày.
 
 ## 1. Đọc nhanh để hiểu dự án
 
@@ -187,12 +187,14 @@ Luật này nhằm khống chế đại lượng trên. **Không kết luận r�
 
 ## 6. Giải thích các folder
 
-| Folder | Mục đích | Khi nào dùng |
+| Folder / Tệp gốc | Mục đích | Khi nào dùng |
 |---|---|---|
-| `pure_pursuit_baseline` | Lưu và tái lập ví dụ nguồn mở PythonRobotics theo phiên bản cố định | Hiểu ví dụ gốc và chứng minh đã chạy được trước khi sửa |
-| `pure_pursuit_diffdrive` | Lưu bản robot vi sai cơ sở cùng ba tuyến thử | Giải thích quá trình chuyển mô hình và kiểm tra robot đúng đề tài |
-| `pure_pursuit_evaluation` | Chứa cả robot cơ sở, phương án giảm tốc và bộ đánh giá 42 cấu hình | **Folder chính để chạy, so sánh và lấy số liệu** |
-| `baocao` | Nơi đặt bản Word và PDF báo cáo đã bàn giao | Đọc nội dung học thuật và chuẩn bị nộp; tự đặt các tệp tải về vào đây |
+| `pure_pursuit_baseline/` | Lưu và tái lập ví dụ nguồn mở PythonRobotics theo phiên bản cố định | Hiểu ví dụ gốc và chứng minh đã chạy được trước khi sửa |
+| `pure_pursuit_diffdrive/` | Lưu bản robot vi sai cơ sở cùng ba tuyến thử | Giải thích quá trình chuyển mô hình và kiểm tra robot đúng đề tài |
+| `pure_pursuit_evaluation/` | Chứa cả robot cơ sở, phương án giảm tốc và bộ đánh giá 42 cấu hình | **Folder Python chính để chạy, so sánh và lấy số liệu danh định** |
+| `simulink/` | Mô hình `KT_Robot_Pure_Pursuit.slx` (đối chiếu 42 cấu hình với Python) và `KT_Robot_Robustness.slx` (70 lượt tư thế đầu + 384 lượt đánh giá độ bền có nhiễu, trễ, mất mẫu, động cơ bậc nhất, lệch bán kính và trượt cục bộ) | Chạy đối chiếu Python–Simulink và khảo sát độ bền trên MATLAB/Simulink R2025b |
+| `Pure_Pursuit_Simulink_Report_EN.docx` | **Báo cáo cuối kỳ bản tiếng Anh (bản nộp chính)** | Đọc và nộp báo cáo học phần hoàn chỉnh |
+| `Bao_cao_Robot_Pure_Pursuit_Simulink_Nang_cap.docx` | Bản báo cáo tiếng Việt tham khảo | Đọc nhanh nội dung học thuật bằng tiếng Việt |
 
 **Dễ nhầm:** tên folder `pure_pursuit_baseline` chỉ **ví dụ xe gốc**. Trong folder 3, tùy chọn `--method baseline` chỉ **robot vi sai cơ sở**. Hai chữ “baseline” này thuộc hai ngữ cảnh khác nhau.
 
@@ -451,6 +453,18 @@ python run_robot.py --animate
 Mỗi lần chạy cần đúng thư mục và đúng Python đã cài thư viện. Môi trường đã chạy thành công trên máy nhóm là **Windows 11, Python 3.13.7, NumPy 2.3.5, Matplotlib 3.10.8, Pillow 13.0.0**; folder 1 còn dùng SciPy theo tệp thư viện của nó. Nếu dùng `.venv`, chọn đúng **Python: Select Interpreter** trong VS Code.
 
 Các tệp đầu ra cùng tên sẽ bị ghi đè khi chạy lại. Cần lưu bản riêng nếu muốn giữ nhiều lần thử.
+
+### 12.5 Chạy kiểm chứng và mô phỏng trên MATLAB/Simulink R2025b
+
+Mở PowerShell tại thư mục `simulink/` và chạy:
+
+```powershell
+matlab -batch "run_kt_checks; check_kt_robustness"
+matlab -batch "evaluate_kt_robot"
+matlab -batch "evaluate_kt_robustness('outputs_robustness',false)"
+```
+
+Chi tiết tham số nhiễu, lệnh dựng lại `.slx` (`build_kt_robot; build_kt_robustness`) và cấu trúc các tệp CSV đầu ra được ghi đầy đủ trong `simulink/README.md`.
 
 ## 13. Khi thuyết trình, cần nắm chắc những ý nào
 
